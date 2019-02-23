@@ -11,14 +11,17 @@ package cse360assign2;
 public class Calculator 
 {
 	private int total;
+	private String calculatorHistory;
 	
 	/**
-	 * Constructor that creates a total variable to keep track of total in
-	 * calculator when performing functions
+	 * Constructor that initializes a total variable to keep track of total in
+	 * calculator when performing functions, and initializes string that
+	 * contains calculator history
 	 */
 	public Calculator () 
 	{
 		total = 0;  // not needed - included for clarity
+		calculatorHistory = "0";
 	}
 	
 	/**
@@ -35,36 +38,46 @@ public class Calculator
 	
 	/**
 	 * Performs addition with values entered by the user
+	 * Adds user inputted value to total
 	 * 
 	 * @param user-inputted value
 	 */
 	public void add (int value) 
 	{
 		total = total + value;
+		
+		calculatorHistory = calculatorHistory + " + " + value; //adds addition operation to calculatorHistory string
 	}
 	
 	/**
 	 * Performs subtraction with values entered by the user
+	 * Subtracts user inputted value from total
 	 * 
 	 * @param user-inputted value
 	 */
 	public void subtract (int value) 
 	{
 		total = total - value;
+		
+		calculatorHistory = calculatorHistory + " - " + value; //adds subtraction operation to calculatorHistory string
 	}
 	
 	/**
 	 * Performs multiplication with values entered by the user
+	 * Multiplies total by user inputted value
 	 * 
 	 * @param user-inputted value
 	 */
 	public void multiply (int value) 
 	{
 		total = total * value;
+		
+		calculatorHistory = calculatorHistory + " * " + value; //adds multiplication operation to calculatorHistory string
 	}
 	
 	/**
 	 * Performs division with values entered by the user
+	 * Divides total by user inputted value
 	 * 
 	 * @param user-inputted value
 	 */
@@ -78,6 +91,8 @@ public class Calculator
 		{
 			total = total / value;
 		}
+		
+		calculatorHistory = calculatorHistory + " / " + value; //adds division operation to calculatorHistory string
 	}
 	
 	/**
@@ -88,6 +103,6 @@ public class Calculator
 	 */
 	public String getHistory () 
 	{
-		return "";
+		return calculatorHistory;
 	}
 }
