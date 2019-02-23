@@ -74,8 +74,10 @@ public class Calculator
 		{
 			total = 0;
 		}
-		
-		total = total / value;
+		else
+		{
+			total = total / value;
+		}
 	}
 	
 	/**
